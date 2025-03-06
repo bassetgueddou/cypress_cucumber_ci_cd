@@ -1,40 +1,39 @@
-pipeline{
-    agent{
-        Docker{
+pipeline {
+    agent {
+        docker {
             image "cypress/browsers"
-            args " --entrypoint=''"
+            args "--entrypoint=''"
         }
     }
-
-
-    stages{
-        stage("npm installation"){
-            steps{
+    stages {
+        stage("npm installation") {
+            steps {
                 sh "npm ci"
             }
         }
-        stage("tests exec"){
-            steps{
+        stage("tests exec") {
+            steps {
                 sh "npx cypress run"
             }
         }
     }
-
-    post{
+    post {
         always {
-        cucumber buildStatus: 'UNSTABLE',
+            cucumber(
+                buildStatus: 'UNSTABLE',
                 failedFeaturesNumber: 1,
                 failedScenariosNumber: 1,
                 skippedStepsNumber: 1,
                 failedStepsNumber: 1,
                 classifications: [
-                        [key: 'Commit', value: '<a href="${GERRIT_CHANGE_URL}">${GERRIT_PATCHSET_REVISION}</a>'],
-                        [key: 'Submitter', value: '${GERRIT_PATCHSET_UPLOADER_NAME}']
+                    [key: 'Commit', value: '<a href="${GERRIT_CHANGE_URL}">${GERRIT_PATCHSET_REVISION}</a>'],
+                    [key: 'Submitter', value: '${GERRIT_PATCHSET_UPLOADER_NAME}']
                 ],
                 reportTitle: 'My report',
                 fileIncludePattern: '**/*.cucumber.json',
                 sortingMethod: 'ALPHABETICAL',
                 trendsLimit: 100
-         }
-
+            )
+        }
+    }
 }
