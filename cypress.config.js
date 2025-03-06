@@ -5,9 +5,10 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   e2e: {
     pageLoadTimeout: 120000,
-    specPattern: "cypress/features/**/*.feature", // a ajouter
+    specPattern: "cypress/features/**/*.feature",
     setupNodeEvents(on, config) {
-      on("file:preprocessor", cucumber()); // ajouter
+      on("file:preprocessor", cucumber());
+      return config;
     },
   },
 });

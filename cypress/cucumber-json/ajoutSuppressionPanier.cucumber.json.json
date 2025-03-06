@@ -1,0 +1,122 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Ajout et suppression des produits de le panier",
+    "line": 1,
+    "id": "ajout-et-suppression-des-produits-de-le-panier",
+    "tags": [],
+    "uri": "ajoutSuppressionPanier.feature",
+    "elements": [
+      {
+        "id": "ajout-et-suppression-des-produits-de-le-panier;ajouter-des-produits-dans-le-panier",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Ajouter des produits dans le panier",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "je suis sur la page produits",
+            "result": {
+              "status": "passed",
+              "duration": 2770000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "je clique sur un bouton add to cart pour \"2\" produits",
+            "result": {
+              "status": "passed",
+              "duration": 465000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "je clique sur le bouton panier",
+            "result": {
+              "status": "passed",
+              "duration": 173000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "je retrouve les memes produits dans le panier",
+            "result": {
+              "status": "passed",
+              "duration": 81000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "ajout-et-suppression-des-produits-de-le-panier;ajouter-puis-supprimer-des-produits-dans-le-panier",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Ajouter puis supprimer des produits dans le panier",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "je suis sur la page produits",
+            "result": {
+              "status": "passed",
+              "duration": 2173000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "je clique sur un bouton add to cart pour \"2\" produits",
+            "result": {
+              "status": "passed",
+              "duration": 314000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "je clique sur le bouton remove pour \"1\" produit",
+            "result": {
+              "status": "passed",
+              "duration": 198000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "je clique sur le bouton panier",
+            "result": {
+              "status": "passed",
+              "duration": 135000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "je retrouve les memes produits dans le panier",
+            "result": {
+              "status": "passed",
+              "duration": 73000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
