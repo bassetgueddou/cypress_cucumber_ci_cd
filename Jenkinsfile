@@ -20,6 +20,8 @@ pipeline {
     post {
         always {
             cucumber(
+                jsonReportDirectory: 'cypress/cucumber-json',
+                fileIncludePattern: '*.cucumber.json.json',
                 buildStatus: 'UNSTABLE',
                 failedFeaturesNumber: 1,
                 failedScenariosNumber: 1,
@@ -30,7 +32,6 @@ pipeline {
                     [key: 'Submitter', value: '${GERRIT_PATCHSET_UPLOADER_NAME}']
                 ],
                 reportTitle: 'My report',
-                fileIncludePattern: 'cypress/cucumber-json/*.cucumber.json',
                 sortingMethod: 'ALPHABETICAL',
                 trendsLimit: 100
             )

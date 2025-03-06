@@ -9,6 +9,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on("file:preprocessor", cucumber());
       return config;
-    },
-  },
+    }
+  }
 });
